@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import { Container } from "../../components/Container/style";
 
-export const Home = styled.main`
+export const Home = styled(Container).attrs(() => ({
+    as: `main`
+}))`
 
-    padding: 0 2vw;
     display: flex;
     align-items: center;
     justify-content: center;
