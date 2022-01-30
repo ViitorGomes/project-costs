@@ -1,4 +1,4 @@
-<span align="center">#project-costs</span>
+<h1 align="center">project-costs</h1>
 
 ## Description
 <br/>
