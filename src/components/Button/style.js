@@ -6,7 +6,11 @@ export const Button = styled.button`
     border: 0;
     transition: .2s ease-in;
     cursor: pointer;
-    font-size: 1.1rem;
+    gap: 6px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     ${props => {
         let bgColor, hoverColor;
@@ -62,7 +66,7 @@ export const Button = styled.button`
         }
 
         return css`
-            border-radius: corner;
+            border-radius: ${corner};
         `
     }}
 `
