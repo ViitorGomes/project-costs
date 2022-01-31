@@ -30,10 +30,9 @@ export const InputWrapper = styled.div`
         pointer-events: none;
         background-color: transparent;
         padding: 3px;
-        transition: .2s;
+        transition: ${Transitions._200ms};
         font-size: 1rem;
         display: block;
-        transition: background-color ${Transitions._300ms};
     }
 
     input {

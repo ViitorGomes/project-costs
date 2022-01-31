@@ -22,7 +22,7 @@ export const SelectWrapper = styled.div`
         padding: 0 8px;
         font-size: 1rem;
         color: ${props => props.theme.font.font1};
-        transition: background-color ${Transitions._300ms};
+        transition: ${Transitions._300ms};
 
         &::placeholder {
             opacity: 0;
@@ -45,10 +45,9 @@ export const SelectWrapper = styled.div`
         pointer-events: none;
         background-color: transparent;
         padding: 3px;
-        transition: .2s;
+        transition: ${Transitions._200ms};
         font-size: 1rem;
         display: block;
-        transition: background-color ${Transitions._300ms};
     }
     
     ${props => props.isFocus && css`
