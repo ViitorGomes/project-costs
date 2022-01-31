@@ -29,6 +29,7 @@ export default {
         static1: '#eaeaea',
         static2: '#b7b7b7',
         static3: '#1a73e8',
-        static4: '#22222250'
+        static4: '#22222250',
+        static5: '#6b7883'
     }
 }

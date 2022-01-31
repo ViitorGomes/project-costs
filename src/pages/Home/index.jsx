@@ -11,7 +11,7 @@ function index() {
       <P>Start managing your projects right now!</P>
       <Link to="/projects/new-project">
         <Button type="button" styleType="active" cornerStyle="basic">
-          Criar projeto <MdOutlineAdd size={"1.6rem"}/>
+          New project  <MdOutlineAdd size={"1.6rem"}/>
         </Button>
       </Link>
   </Home>;

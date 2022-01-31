@@ -2,7 +2,9 @@ import styled, { css } from "styled-components";
 
 const Heading = styled.h1.attrs(({level = 1}) => ({
     as: `h${level}`
-}))``
+}))`
+    font-weight: 700;
+`
 
 const P = styled.p`
     font-size: calc(.77rem + .66vmin);

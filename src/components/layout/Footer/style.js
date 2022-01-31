@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Container } from "../../Container/style";
+import Transitions from '../../style/animations/Transition/style'
 
 export const Footer = styled(Container).attrs(() => ({
     as: `footer`
@@ -9,6 +10,7 @@ export const Footer = styled(Container).attrs(() => ({
     justify-content: center;
     align-items: center;
     flex-flow: column;
+    transition: background-color ${Transitions._300ms};
 
     > *:not(:last-child) {
         margin-bottom: 8px;
