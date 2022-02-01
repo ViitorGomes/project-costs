@@ -5,7 +5,6 @@ import Transitions from '../../components/style/animations/Transition/style'
 export const Home = styled(Container).attrs(() => ({
     as: `main`
 }))`
-
     display: flex;
     align-items: center;
     justify-content: center;

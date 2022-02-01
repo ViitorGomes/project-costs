@@ -2,7 +2,10 @@ import styled from "styled-components";
 import Transitions from '../../style/animations/Transition/style'
 
 export const Header = styled.header`
-    position: relative;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 90px;
     display: flex;
     justify-content: flex-end;
     align-items: center;

@@ -10,7 +10,6 @@ export const PageNavegation = styled.nav`
 
     ul {
         position: absolute;
-        z-index: 1000;
         top: 100%;
         left: 0;
         background-color: ${props => props.theme.background.bg1};
