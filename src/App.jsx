@@ -10,7 +10,7 @@ import Transitions from './components/style/animations/Transition/style';
 const App = styled.div`
   display: grid;
   min-height: 100vh;
-  grid-template-rows: 90px calc(100vh - 90px) 120px;
+  grid-template-rows: 90px minmax(calc(100vh - 90px), 1fr) 120px;
   background-color: ${props => props.theme.background.bg2};
   transition: background-color ${Transitions._300ms};
 `

@@ -40,7 +40,7 @@ export const SelectWrapper = styled.div`
     label {
         position: absolute;
         left: 4px;
-        top: 22%;
+        top: 26%;
         color: ${props => props.theme.font.font1};
         pointer-events: none;
         background-color: transparent;
@@ -68,7 +68,6 @@ export const SelectWrapper = styled.div`
                 border: 1px solid ${props => props.theme.static.static3};
             }
         }
-
     `}
 
     ${props => props.isFocus || props.notEmpty ? css`

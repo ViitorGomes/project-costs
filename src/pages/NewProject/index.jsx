@@ -5,6 +5,7 @@ import InputWrapper from '../../components/inputs/InputWrapper'
 import SelectWrapper from '../../components/inputs/SelectWrapper'
 import TextareaWrapper from '../../components/inputs/TextareaWrapper'
 import Button from '../../components/Button'
+import formatValue from '../../utils/monetaryFormat';
 
 function index() {
   const [name, setName] = useState('')
@@ -47,7 +48,7 @@ function index() {
         type="text" 
         id="projectBudget" 
         name="projectBudget" 
-        value={budget} 
+        value={formatValue(budget)} 
         isRequired={true} 
         autoComplete="off" 
         label="Project budget:"

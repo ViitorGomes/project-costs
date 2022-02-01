@@ -25,7 +25,7 @@ export const InputWrapper = styled.div`
     label {
         position: absolute;
         left: 4px;
-        top: 22%;
+        top: 26%;
         color: ${props => props.theme.font.font1};
         pointer-events: none;
         background-color: transparent;
