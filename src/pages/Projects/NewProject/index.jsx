@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { FormContainer } from './style'
-import { Heading } from '../../components/style/elements/Typoghaphy/style';
-import InputWrapper from '../../components/inputs/InputWrapper'
-import SelectWrapper from '../../components/inputs/SelectWrapper'
-import TextareaWrapper from '../../components/inputs/TextareaWrapper'
-import Button from '../../components/Button'
-import formatValue from '../../utils/monetaryFormat';
+import { Heading } from '../../../components/style/elements/Typoghaphy/style';
+import InputWrapper from '../../../components/inputs/InputWrapper'
+import TextareaWrapper from '../../../components/inputs/TextareaWrapper'
+import Button from '../../../components/Button'
+import formatValue from '../../../utils/monetaryFormat';
+import CategorySelector from '../../../components/ProjectCategories';
 
 function index() {
   const [name, setName] = useState('')
@@ -15,17 +15,14 @@ function index() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log(name)
-    console.log(budget)
-    console.log(category)
-    console.log(description)
+    const newProject = {
+      id: Date.now(),
+      name: name,
+      budget: budget,
+      category: category,
+      description: description
+    }
   }
-
-  const categoryOptions = [
-    "Desenvolvimento",
-    "Infra",
-    "Financeiro"
-  ]
 
   return <FormContainer>
     <Heading level={3}>New Project</Heading>
@@ -37,7 +34,8 @@ function index() {
         name="projectName" 
         value={name} 
         isRequired={true} 
-        autoComplete="off" 
+        autoComplete="off"
+        autoFocus={true} 
         label="Project name:" 
         cb={
           {onChange: e => setName(e.target.value)}
@@ -58,15 +56,8 @@ function index() {
         }
       />
 
-      <SelectWrapper 
-        id="projectCategory"
-        name="projectCategory"
-        value={category}
-        options={categoryOptions}
-        label="Project category"
-        cb={{onChange: e => setCategory(e = e.target.value)}}
-        isRequired={true}
-      />
+      <CategorySelector />
+
       <TextareaWrapper
         id="projectDescription"
         name="projectDescription"

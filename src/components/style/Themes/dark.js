@@ -26,7 +26,7 @@ export default {
         warningHover: '#bd8b20'
     },
     static: {
-        static1: '#eaeaea',
+        static1: '#f5f7fb',
         static2: '#b7b7b7',
         static3: '#1a73e8',
         static4: '#22222250',

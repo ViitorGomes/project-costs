@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { SelectWrapper } from './style'
 import React, {useState} from 'react'
 
-function index({value, options, name, id, label, cb, isRequired = false}) {
+function index({value, options, name, id, label, cb, autoFocus = false, isRequired = false}) {
 
   const [focus, setFocus] = useState(false)
   const [notEmpty, setNotEmpty] = useState(false)
@@ -16,6 +16,7 @@ function index({value, options, name, id, label, cb, isRequired = false}) {
       name={name} 
       id={id} 
       required={isRequired}
+      autoFocus={autoFocus}
       {...cb}
       onFocus={e => {
         setFocus(true)
@@ -44,6 +45,7 @@ index.propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string,
     isRequired: PropTypes.bool,
+    autoFocus: PropTypes.bool,
     cb: PropTypes.object
 }
 

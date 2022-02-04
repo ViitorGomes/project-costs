@@ -1,26 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import React, { useState, useEffect, useContext } from 'react';
+import { ThemeProvider } from 'styled-components';
 import AppRoutes from './routers';
 import Header from './components/layout/Header';
 import Light from './components/style/Themes/light';
 import Dark from './components/style/Themes/dark';
 import Footer from './components/layout/Footer';
-import Transitions from './components/style/animations/Transition/style';
-
-const App = styled.div`
-  display: grid;
-  min-height: 100vh;
-  grid-template-rows: minmax(100vh, 1fr) 120px;
-  background-color: ${props => props.theme.background.bg2};
-  transition: background-color ${Transitions._300ms};
-
-  main {
-    padding-top: 120px;
-  }
-`
+import { StyledScroll } from './components/style/elements/Scroll/style';
+import SubHeader from './components/layout/SubHeader';
+import { MenuProvider } from './context/menuContext';
+import { App } from './style';
+import ContentContainer from './components/MainContentContainer';
 
 export default function index() {
-
   const [ theme, setTheme ] = useState(() => {
     const storedTheme = JSON.parse(localStorage.getItem('theme'))
 
@@ -40,12 +31,16 @@ export default function index() {
   }
 
   return <ThemeProvider theme={theme}>
+    <StyledScroll />
     <App>
-      <Header themeCb={toggleTheme}/>
-      <>
-        <AppRoutes/>
-      </>
-      <Footer />
+      <MenuProvider>
+        <Header/>
+        <ContentContainer>
+          <SubHeader themeCb={toggleTheme} currentTheme={theme.title}/>
+          <AppRoutes/>
+          <Footer />
+        </ContentContainer>
+      </MenuProvider>
     </App>
   </ThemeProvider>
 }

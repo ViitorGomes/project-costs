@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { FlexContainer } from "../../components/Container/style";
-import Transitions from '../../components/style/animations/Transition/style'
+import { FlexContainer } from "../../../components/Container/style";
+import Transitions from '../../../components/style/animations/Transition/style'
 
 export const ProjectsContainer = styled.section`
     display: grid;

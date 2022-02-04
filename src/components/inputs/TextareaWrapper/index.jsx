@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { TextareaWrapper} from './style';
 
-function index({name, id, value, rows = "10", cols = "30", isRequired = false, label, cb}) {
+function index({name, id, value, rows = "10", cols = "30", isRequired = false, autoFocus = false, label, cb}) {
   return <TextareaWrapper>
 
         {label && <label htmlFor={id}>{label}</label>}
@@ -13,6 +13,7 @@ function index({name, id, value, rows = "10", cols = "30", isRequired = false, l
             cols={cols} 
             rows={rows}
             required={isRequired}
+            autoFocus={autoFocus}
             {...cb}
         ></textarea>
     </TextareaWrapper>;
@@ -25,6 +26,7 @@ index.prototype = {
     rows: PropTypes.string,
     cols: PropTypes.string,
     isRequired: PropTypes.string,
+    autoFocus: PropTypes.string,
     label: PropTypes.string,
     cb: PropTypes.object
 }

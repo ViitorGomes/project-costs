@@ -5,6 +5,8 @@ import Transitions from '../../style/animations/Transition/style'
 export const Footer = styled(Container).attrs(() => ({
     as: `footer`
 }))`
+    width: 100%;
+    height: 120px;
     background-color: ${props => props.theme.background.bg1};
     display: flex;
     justify-content: center;

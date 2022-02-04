@@ -1,47 +1,28 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const PageNavegation = styled.nav`
-
-    > svg {
-        font-size: 3.2rem;
-        cursor: pointer;
-        color: ${props => props.theme.font.font2};
-    }
+    width: 100%;
 
     ul {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: ${props => props.theme.background.bg1};
-        width: 100%;
-        height: calc(100vh - 74px);
         transition: .2s;
-        transform-origin: top;
         display: flex;
         flex-flow: column;
-        transform: scaleY(0);
-        opacity: 0;
-
-        ${props => props.showingMenu && css`
-            transform: scaleY(1);
-            opacity: 1;
-        `}
 
         li {
             a {
                 color: ${props => props.theme.font.font3};
                 padding: 16px;
                 display: inline-block;
-                font-size: calc(.77rem + 1vmin);
+                font-size: calc(.66rem + .88vmin);
                 font-weight: 600;
                 transition: .2s;
-                position: relative;
+                border-left: 6px solid transparent;
                 display: flex;
                 align-items: center;
-                border-left: 6px solid transparent;
+                justify-content: flex-start;
 
                 > svg {
-                    font-size: 1.4rem;
+                    font-size: 1.2rem;
                     margin-right: 7px;
                 }
 
@@ -54,30 +35,6 @@ export const PageNavegation = styled.nav`
            &:not(:last-child) {
                margin-bottom: 12px;
            } 
-        }
-    }
-
-    @media screen and (min-width: 760px) {
-        > svg {
-            display: none;
-        }
-
-        ul {
-            position: static;
-            opacity: 1 !important;
-            transform: scaleX(1) !important;
-            align-items: center;
-            height: auto;
-            flex-flow: row;
-
-            li {
-                margin-bottom: 0 !important;
-
-                a {
-                    font-size: calc(.55rem + 1vmin);
-                    border: 0 !important;
-                }
-            }
         }
     }
 `

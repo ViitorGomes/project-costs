@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { InputWrapper } from "../../components/inputs/InputWrapper/style";
-import { SelectWrapper } from "../../components/inputs/SelectWrapper/style";
-import Transitions from '../../components/style/animations/Transition/style'
+import { InputWrapper } from "../../../components/inputs/InputWrapper/style";
+import { SelectWrapper } from "../../../components/inputs/SelectWrapper/style";
+import Transitions from '../../../components/style/animations/Transition/style'
 
 export const FormContainer = styled.section`
     max-width: 680px;
@@ -12,7 +12,7 @@ export const FormContainer = styled.section`
     background-color: ${props => props.theme.background.bg3};
     transition: background-color ${Transitions._300ms};
 
-    h3 {
+    > h3 {
         font-size: calc(.88rem + .77vmin);
         color: ${props => props.theme.font.font1};
         margin-bottom: 16px;

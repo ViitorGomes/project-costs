@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { InputWrapper } from './style';
 import { useState } from 'react';
 
-function index({type="text",id, name, value, isRequired=false, autoComplete = "on", label, flag, cb}) {
+function index({type="text",id, name, value, isRequired=false, autoComplete = "on", autoFocus=false, label, flag, cb}) {
   const [focus, setFocus] = useState(false)
   const [notEmpty, setNotEmpty] = useState(false)
 
@@ -18,6 +18,7 @@ function index({type="text",id, name, value, isRequired=false, autoComplete = "o
       value={value} 
       required={isRequired}
       autoComplete={autoComplete} 
+      autoFocus={autoFocus}
       onFocus={e => {
         setFocus(true)
         setNotEmpty(false)
@@ -38,6 +39,7 @@ index.propTypes = {
     value: PropTypes.any.isRequired,
     isRequired: PropTypes.bool,
     autoComplete: PropTypes.string,
+    autoFocus: PropTypes.bool,
     label: PropTypes.string,
     flag: PropTypes.string,
     cb: PropTypes.object

@@ -2,10 +2,10 @@ import React from 'react';
 import { ProjectsContainer, ProjectList } from './style'
 import { MdOutlineAdd } from "react-icons/md";
 import { useOutletContext, Link } from 'react-router-dom';
-import { P } from '../../components/style/elements/Typoghaphy/style';
+import { P } from '../../../components/style/elements/Typoghaphy/style';
 import { NoProjectWarning } from './style';
-import ProjectCard from '../../components/ProjectCard'
-import Button from '../../components/Button';
+import ProjectCard from '../../../components/ProjectCard'
+import Button from '../../../components/Button';
 
 function index() {
   const { projects } = useOutletContext()

@@ -8,8 +8,9 @@ import Home from './pages/Home'
 import Spends from './pages/Spends'
 import Networking from './pages/Networking'
 import Projects from './pages/Projects';
-import NewProject from './pages/NewProject'
-import ProjectList from './pages/ProjectsList'
+import NewProject from './pages/Projects/NewProject'
+import ProjectList from './pages/Projects/ProjectsList'
+import AppConfig from './pages/AppConfig'
 import NotFound from './pages/NotFound';
 
 export default function index() {
@@ -21,6 +22,7 @@ export default function index() {
             </Route>
             <Route path="/spends" element={<Spends />} />
             <Route path="/networking" element={<Networking />} />
+            <Route path="/configuration" element={<AppConfig />} />
             <Route path="*" element={<NotFound/>}/>
         </Routes>
 }

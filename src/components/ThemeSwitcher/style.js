@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const ThemeSwitcher = styled.div`
     width: 60px;
     height: 28px;
-    margin-right: 22px;
-    
+    justify-self: flex-end;
+
     label {
         border-radius: 2rem;
-        border: 3px solid ${props => props.theme.static.static1};
+        border: 3px solid ${props => props.theme.static.static5};
         display: block;
         padding: 3px;
         cursor: pointer;
@@ -17,7 +17,7 @@ export const ThemeSwitcher = styled.div`
 
         svg {
             position: absolute;
-            color: ${props => props.theme.static.static1};
+            color: ${props => props.theme.static.static5};
             top: 50%;
             transform: translateY(-50%);
 
@@ -35,7 +35,7 @@ export const ThemeSwitcher = styled.div`
             display: block;
             width: 50%;
             height: 16px;
-            background-color: ${props => props.theme.static.static1};
+            background-color: ${props => props.theme.static.static5};
             border-radius: 2rem;
             transition: .3s;
         }

@@ -26,22 +26,10 @@ export default {
         warningHover: '#dfad42'
     },
     static: {
-        static1: '#ffffff',
+        static1: '#f5f7fb',
         static2: '#a4a4a4',
         static3: '#1a73e8',
         static4: '#22222250',
         static5: '#6b7883'
-    },
-    transition: {
-        _100ms: '.1s',
-        _200ms: '.2s',
-        _300ms: '.3s',
-        _400ms: '.4s',
-        _500ms: '.5s',
-        _600ms: '.6s',
-        _700ms: '.7s',
-        _800ms: '.8s',
-        _900ms: '.9s',
-        _1000ms: '1s',
     }
 }
