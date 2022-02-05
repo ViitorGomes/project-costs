@@ -14,7 +14,7 @@ function index({userName}) {
             <P>{userName}</P>
         </FlexContainer>
         <FlexContainer>
-            <Link to="/configuration"><MdPermIdentity/>My profile</Link>
+            <Link to="/settings"><MdPermIdentity/>My profile</Link>
         </FlexContainer>
         <FlexContainer justify="center">
             <LogoutButton />

@@ -10,7 +10,7 @@ import Networking from './pages/Networking'
 import Projects from './pages/Projects';
 import NewProject from './pages/Projects/NewProject'
 import ProjectList from './pages/Projects/ProjectsList'
-import AppConfig from './pages/AppConfig'
+import AppSettings from './pages/AppSettings'
 import NotFound from './pages/NotFound';
 
 export default function index() {
@@ -22,7 +22,7 @@ export default function index() {
             </Route>
             <Route path="/spends" element={<Spends />} />
             <Route path="/networking" element={<Networking />} />
-            <Route path="/configuration" element={<AppConfig />} />
+            <Route path="/settings" element={<AppSettings />} />
             <Route path="*" element={<NotFound/>}/>
         </Routes>
 }

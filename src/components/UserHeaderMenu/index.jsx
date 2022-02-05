@@ -18,9 +18,8 @@ function index({userName, userPicture}) {
         handleClickOut()
     })
 
-
     return <UserHeaderMenu ref={userMenuRef}>
-        <UserPicWrapper userPicture={userPicture} onClick={e => setShowMenu(showMenu ? false : true)} />
+        <UserPicWrapper userPicture={userPicture} onClick={e => setShowMenu(!showMenu)} />
         {showMenu && <UserMenu userName={userName} />}
     </UserHeaderMenu>;
 }

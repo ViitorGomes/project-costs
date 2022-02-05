@@ -16,7 +16,6 @@ function index({themeCb, currentTheme}) {
             <MenuDisplay onClick={e => handleMenuDisplay(true)}>
                 <MdNotes/>
             </MenuDisplay>
-            <Notifications/>
         </FlexContainer>
         <FlexContainer gap="36px" align="center">
             <ThemeSwitcher cb={themeCb} theme={currentTheme}/>
