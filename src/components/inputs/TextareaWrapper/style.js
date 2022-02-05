@@ -21,7 +21,7 @@ export const TextareaWrapper = styled.div`
         padding: 8px;
         font-size: 1rem;
         color: ${props => props.theme.font.font1};
-        transition: background-color ${Transitions._300ms};
+        transition: background-color ease-in ${Transitions._300ms};
     }
 
 `

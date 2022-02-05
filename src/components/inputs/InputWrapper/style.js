@@ -45,7 +45,7 @@ export const InputWrapper = styled.div`
         font-size: 1.09rem;
         padding: 0 8px;
         border: 1px solid transparent;
-        transition: background-color ${Transitions._300ms};
+        transition: background-color ease-in ${Transitions._300ms};
 
         &:-webkit-autofill,
         &:-webkit-autofill:hover, 

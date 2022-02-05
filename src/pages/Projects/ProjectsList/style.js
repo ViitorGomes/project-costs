@@ -13,7 +13,7 @@ export const NoProjectWarning = styled(FlexContainer)`
     p {
         font-weight: 600;
         color: ${props => props.theme.font.font1};
-        transition: color ${Transitions._300ms};
+        transition: color ease-in ${Transitions._300ms};
         font-size: calc(.99rem + .77vmin);
     }
 `

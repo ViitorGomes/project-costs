@@ -10,7 +10,7 @@ export const FormContainer = styled.section`
     width: 100%;
     margin: 0 auto;
     background-color: ${props => props.theme.background.bg3};
-    transition: background-color ${Transitions._300ms};
+    transition: background-color ease-in ${Transitions._300ms};
 
     > h3 {
         font-size: calc(.88rem + .77vmin);

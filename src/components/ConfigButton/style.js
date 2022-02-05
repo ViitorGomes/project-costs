@@ -4,7 +4,7 @@ import Transitions from '../style/animations/Transition/style'
 
 export const ConfigButton = styled(SimpleButton)`
     font-size: 1.6rem;
-    transition: color ${Transitions._300ms};
+    transition: color ease-in ${Transitions._200ms};
     color: ${props => props.theme.font.font3};
 
     &:hover {

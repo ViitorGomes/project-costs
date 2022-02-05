@@ -32,7 +32,7 @@ export const ProjectHeader = styled.header`
             display: block;
             height: 4px;
             background-image: linear-gradient(to right, ${props => props.theme.font.font1} 20%, transparent 40%, transparent 40%);
-            transition: background-image ${Transitions._300ms};
+            transition: background-image ease-in ${Transitions._300ms};
 
         }
     }

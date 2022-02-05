@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const Heading = styled.h1.attrs(({level = 1}) => ({
     as: `h${level}`

@@ -12,7 +12,7 @@ export const CategorieItem = styled.button`
     padding: 6px 8px;
     gap: 12px;
     cursor: pointer;
-    transition: background-color ${Transition._300ms};
+    transition: background-color ease-in ${Transition._300ms};
 `
 
 export const CategoryColor = styled.div`

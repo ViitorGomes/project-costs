@@ -15,13 +15,13 @@ export const Home = styled(Container).attrs(() => ({
         color: ${props => props.theme.font.font1};
         font-size: calc(1rem + 3.6vmin);
         font-weight: 700;
-        transition: color ${Transitions._300ms};
+        transition: color ease-in ${Transitions._300ms};
 
 
         span {
             font-size: calc(1.2rem + 3.2vmin);
             background-color: ${props => props.theme.background.bg1};
-            transition: background-color ${Transitions._300ms};
+            transition: background-color ease-in ${Transitions._300ms};
             color: ${props => props.theme.font.font2};
             padding: 6px 8px;
         }

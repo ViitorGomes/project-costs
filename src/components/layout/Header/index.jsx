@@ -10,7 +10,6 @@ import { useClickOut } from '../../../hooks/useClickOut';
 import { MenuContext } from '../../../context/menuContext'
 
 function index() {
-    
     const { displayMenu, handleMenuDisplay } = useContext(MenuContext)
 
     const headerRef = useClickOut(() => {

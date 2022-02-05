@@ -14,7 +14,7 @@ export const CategoriesContainer = styled.div`
     border-radius: .4rem;
     border: 1px solid ${props => props.theme.static.static4};
     background-color: ${props => props.theme.background.bg4};
-    transition: background-color ${Transition._300ms};
+    transition: background-color ease-in ${Transition._300ms};
     display: grid;
     grid-template-rows: 1fr 26px;
     gap: 8px;
@@ -25,7 +25,7 @@ export const CategoriesContainer = styled.div`
         font-size: 1rem;
         color: ${props => props.theme.font.font4};
         border-radius: .3rem;
-        transition: background-color ${Transition._200ms};
+        transition: background-color ease-in ${Transition._200ms};
         
         &:hover {
             background-color: ${props => props.theme.button.active}25;

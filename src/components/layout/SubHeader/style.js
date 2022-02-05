@@ -5,12 +5,12 @@ import Transitions from '../../style/animations/Transition/style'
 
 export const SubHeader = styled(Container)`
     width: 100%;
-    height: 56px;
+    height: 62px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: ${props => props.theme.background.bg3};
-    transition: all ${Transitions._300ms}, background-color ${Transitions._300ms};
+    transition: background-color ease-in ${Transitions._300ms};
 `
 
 export const MenuDisplay = styled(SimpleButton)`

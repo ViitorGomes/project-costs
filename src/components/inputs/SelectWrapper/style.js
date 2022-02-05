@@ -22,7 +22,7 @@ export const SelectWrapper = styled.div`
         padding: 0 8px;
         font-size: 1rem;
         color: ${props => props.theme.font.font1};
-        transition: ${Transitions._300ms};
+        transition: background-color ease-in ${Transitions._300ms};
 
         &::placeholder {
             opacity: 0;
