@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { Heading } from '../../components/style/elements/Typoghaphy/style';
 import { MdOutlineAdd } from "react-icons/md";
-import Button from '../../components/Button';
-import { CustomMainContainer } from './style'
+import Button from '../../components/buttons/DefaultButton';
+import { ProjectsMainContainer } from './style'
 
 function index() {
 
   const [projects, setProjects] = useState(localStorage.getItem('projects') || [])
 
-  return <CustomMainContainer>
+  return <ProjectsMainContainer>
       <header>
         <Heading level={2}>Projects</Heading>
         {projects.length > 0 && <Link to="new-project">
@@ -19,7 +19,7 @@ function index() {
         </Link>}
       </header>
       <Outlet context={{projects}} />
-  </CustomMainContainer>;
+  </ProjectsMainContainer>;
 }
 
 export default index;

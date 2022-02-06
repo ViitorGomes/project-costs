@@ -4,7 +4,7 @@ import { MdOutlineModeEdit, MdDelete } from "react-icons/md";
 import { Heading, Span } from '../style/elements/Typoghaphy/style';
 import { FlexContainer } from '../Container/style';
 import { ProjectCard, ProjectInformationsWrapper } from './style';
-import Button from '../Button'
+import Button from '../buttons/DefaultButton'
 
 function index({projectName, projectBudget, projectCategory}) {
 

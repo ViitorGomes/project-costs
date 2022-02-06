@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import { SimpleButton } from "../SimpleButton/style";
+import { SimpleButton } from "../buttons/SimpleButton/style";
 
 export const UserHeaderMenu = styled.div`
     position: relative;
+    z-index: 1000;
 `
 
 export const UserPicWrapper = styled(SimpleButton)`

@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Container } from "../../Container/style";
-import { SimpleButton } from "../../SimpleButton/style";
+import { SimpleButton } from "../../buttons/SimpleButton/style";
 import Transitions from '../../style/animations/Transition/style'
 
 export const SubHeader = styled(Container)`

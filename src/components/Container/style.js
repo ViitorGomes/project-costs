@@ -14,9 +14,9 @@ export const Container = styled.div`
 `
 export const FlexContainer = styled.div`
     display: flex;
-    justify-content: ${props => props.justify ? props.justify : "flex-start"};
-    align-items: ${props => props.align ? props.align : "flex-start"};
-    flex-flow: ${props => props.flow ? props.flow : "row"};
+    justify-content: ${props => props.justify ? props.justify : null};
+    align-items: ${props => props.align ? props.align : null};
+    flex-flow: ${props => props.flow ? props.flow : null};
     gap: ${props => props.gap ? props.gap : 0};
 
 `

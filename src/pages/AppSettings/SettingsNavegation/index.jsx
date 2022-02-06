@@ -5,7 +5,7 @@ import { SettingsNavegation } from './style'
 
 function index() {
   return <SettingsNavegation>
-      <Heading level={3}>Menu</Heading>
+      <Heading level={5}>Menu</Heading>
       <ul>
           <li><Link to="user-profile">User profile</Link></li>
           <li><Link to="categories-settings">Categories settings</Link></li>

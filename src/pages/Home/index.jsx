@@ -3,7 +3,7 @@ import { Home } from './style'
 import { Heading, Span, P } from '../../components/style/elements/Typoghaphy/style';
 import { Link } from 'react-router-dom'
 import { MdOutlineAdd } from "react-icons/md";
-import Button from '../../components/Button'
+import Button from '../../components/buttons/DefaultButton'
 
 function index() {
   return <Home>

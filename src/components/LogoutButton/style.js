@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SimpleButton } from "../SimpleButton/style";
+import { SimpleButton } from "../buttons/SimpleButton/style";
 import Transition from '../style/animations/Transition/style'
 
 export const LogoutButton = styled(SimpleButton)`

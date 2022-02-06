@@ -3,14 +3,14 @@ import Transitions from '../../../components/style/animations/Transition/style'
 
 export const SettingsNavegation = styled.nav`
     background-color: ${props => props.theme.background.bg3};
-    transition: background-color ${Transitions._300ms};
+    transition: background-color ease-in ${Transitions._300ms};
     width: 300px;
     border-radius: .3rem;
 
-    h3 {
-        font-size: 1.2rem;
+    h5 {
+        font-size: 1.1rem;
         font-weight: 600;
-        padding: 12px 20px;
+        padding: 16px 20px;
         color: ${props => props.theme.font.font1};
         border-bottom: 1px solid ${props => props.theme.static.static5};
     }

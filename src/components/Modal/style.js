@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SimpleButton } from "../SimpleButton/style";
+import { SimpleButton } from "../buttons/SimpleButton/style";
 
 export const Modal = styled.div`
     position: fixed;

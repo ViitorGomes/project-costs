@@ -1,5 +1,5 @@
 import React from 'react';
-import { SimpleButton } from '../../SimpleButton/style'
+import { SimpleButton } from '../../buttons/SimpleButton/style'
 import PropTypes from 'prop-types';
 import { CategoriesContainer, CategoriesFieldset } from './style';
 import { MdOutlineAdd } from "react-icons/md";

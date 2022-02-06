@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { SelectWrapper } from './style'
 import React, {useState} from 'react'
 
-function index({value, options, name, id, label, cb, autoFocus = false, isRequired = false}) {
+function index({value, options, name, id, inputRef, label, cb, autoFocus = false, isRequired = false}) {
 
   const [focus, setFocus] = useState(false)
   const [notEmpty, setNotEmpty] = useState(false)
@@ -13,8 +13,9 @@ function index({value, options, name, id, label, cb, autoFocus = false, isRequir
 
     <select 
       value={value} 
-      name={name} 
       id={id} 
+      name={name}
+      {...(inputRef ? {ref: inputRef} : null)} 
       required={isRequired}
       autoFocus={autoFocus}
       {...cb}

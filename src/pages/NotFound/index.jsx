@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import Button from '../../components/Button';
+import Button from '../../components/buttons/DefaultButton';
 import { NotFoundPage } from './style'
 import notFoundImage from '../../assets/images/not_found.png'
 import { P } from '../../components/style/elements/Typoghaphy/style'

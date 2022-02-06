@@ -5,7 +5,7 @@ import { useOutletContext, Link } from 'react-router-dom';
 import { P } from '../../../components/style/elements/Typoghaphy/style';
 import { NoProjectWarning } from './style';
 import ProjectCard from '../../../components/ProjectCard'
-import Button from '../../../components/Button';
+import Button from '../../../components/buttons/DefaultButton'
 
 function index() {
   const { projects } = useOutletContext()

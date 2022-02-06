@@ -3,7 +3,7 @@ import { FormContainer } from './style'
 import { Heading } from '../../../components/style/elements/Typoghaphy/style';
 import InputWrapper from '../../../components/inputs/InputWrapper'
 import TextareaWrapper from '../../../components/inputs/TextareaWrapper'
-import Button from '../../../components/Button'
+import Button from '../../../components/buttons/DefaultButton'
 import formatValue from '../../../utils/monetaryFormat';
 import CategorySelector from '../../../components/ProjectCategories';
 

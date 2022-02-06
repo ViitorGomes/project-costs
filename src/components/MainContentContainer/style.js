@@ -15,7 +15,7 @@ export const ContentContainer = styled(FlexContainer)`
   }
 
   > main {
-    height: calc(100vh - 56px);
+    min-height: calc(100vh - 56px);
   }
 
   @media screen and (min-width: 760px) {

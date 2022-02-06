@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ProjectCategories } from './style'
 import CategoriesContainer from './CategoriesList';
 import { MdOutlineAdd } from "react-icons/md";
-import Button from '../Button';
+import Button from '../buttons/DefaultButton';
 import { Span } from '../style/elements/Typoghaphy/style';
 
 function index() {

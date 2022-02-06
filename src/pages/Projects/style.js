@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { MainContainer } from "../../components/Container/style";
 
-export const CustomMainContainer = styled(MainContainer)`
+export const ProjectsMainContainer = styled(MainContainer)`
     display: grid;
     grid-template-rows: 60px 1fr;
     gap: 36px;

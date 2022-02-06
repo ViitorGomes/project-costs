@@ -7,5 +7,4 @@ export const App = styled.div`
   background-color: ${props => props.theme.background.bg2};
   transition: background-color ease-in ${Transitions._300ms};
   overflow-x: hidden;
-
 `
