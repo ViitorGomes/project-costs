@@ -15,7 +15,9 @@ export const UserProfileDatas = styled.div`
     h5 {
         font-weight: 600;
         color: ${props => props.theme.font.font1};
+        transition: background-color ease-in ${Transitions._300ms};
         padding: 16px 20px;
         font-size: 1.1rem;
+        border-bottom: 1px solid ${props => props.theme.static.static5};
     }
 `

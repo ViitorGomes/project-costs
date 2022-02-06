@@ -10,7 +10,7 @@ function index() {
       <header>
         <Heading level={2}>Settings</Heading>
       </header>
-      <FlexContainer gap="36px" align="flex-start">
+      <FlexContainer gap="36px" flow="column" align="flex-start">
         <SettingsNavegation />
         <Outlet />
       </FlexContainer>

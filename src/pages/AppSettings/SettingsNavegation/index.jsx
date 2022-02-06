@@ -7,6 +7,7 @@ function index() {
   return <SettingsNavegation>
       <Heading level={5}>Menu</Heading>
       <ul>
+          <li><Link to="">General settings</Link></li>
           <li><Link to="user-profile">User profile</Link></li>
           <li><Link to="categories-settings">Categories settings</Link></li>
       </ul>

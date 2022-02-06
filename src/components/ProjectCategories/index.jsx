@@ -7,7 +7,7 @@ import { Span } from '../style/elements/Typoghaphy/style';
 
 function index() {
     const [showCategories, setShowCategories] = useState(false)
-    const categories = () => JSON.parse(localStorage.getItem("categories")) || []
+    const categories = JSON.parse(localStorage.getItem("categories")) || []
 
     return <ProjectCategories>
         <Span>Categories:</Span>

@@ -13,6 +13,7 @@ import ProjectList from './pages/Projects/ProjectsList'
 import AppSettings from './pages/AppSettings'
 import NotFound from './pages/NotFound';
 import UserSettings from './pages/AppSettings/UserSettings';
+import GeneralSettings from './pages/AppSettings/GeneralSettings';
 
 export default function index() {
     return <Routes>
@@ -24,7 +25,8 @@ export default function index() {
             <Route path="/spends" element={<Spends />} />
             <Route path="/networking" element={<Networking />} />
             <Route path="/settings/*" element={<AppSettings />}>
-                <Route path="" element={<UserSettings/>} />
+                <Route path="" element={<GeneralSettings/>} />
+                <Route path="user-profile" element={<UserSettings/>} />
             </Route>
             <Route path="*" element={<NotFound/>}/>
         </Routes>

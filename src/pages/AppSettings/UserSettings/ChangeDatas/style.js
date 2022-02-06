@@ -2,23 +2,31 @@ import styled from "styled-components";
 import { FlexContainer } from "../../../../components/Container/style";
 import { UploadButton } from "../../../../components/buttons/UploadButton/style";
 
-export const UserDatasForm = styled.form`
+export const ChangeDatasForm = styled.form`
     padding: 20px;
 
     > ${FlexContainer} {
         gap: 36px;
         margin-bottom: 36px;
+
+        @media screen and (min-width: 1028px) {
+           flex-flow: row;
+        }
     }
 `
 
-export const UserInfoContainer = styled(FlexContainer)`
-    width: 66.666%;
-    justify-content: center;
+export const InfosContainer = styled(FlexContainer)`
+    width: 100%;
     gap: 36px;
+    
+
+    @media screen and (min-width: 1028px) {
+        width: 66.666%;
+    }
 `
 
-export const UserPictureContainer = styled(FlexContainer)`
-    width: 33.333%;
+export const PictureContainer = styled(FlexContainer)`
+    width: 100%;
 
     > ${FlexContainer} {
         position: relative;
@@ -39,5 +47,9 @@ export const UserPictureContainer = styled(FlexContainer)`
             bottom: 10px;
             right: 10px;
         }
+    }
+
+    @media screen and (min-width: 1028px) {
+        width: 33.333%;
     }
 `

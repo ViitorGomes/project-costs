@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { UserDatasForm, UserInfoContainer, UserPictureContainer } from './style'
+import { ChangeDatasForm, InfosContainer, PictureContainer } from './style'
 import InputWrapper from '../../../../components/inputs/InputWrapper'
 import Button from '../../../../components/buttons/DefaultButton'
 import defaultUser from '../../../../assets/images/default_user.png'
@@ -28,21 +28,21 @@ function index() {
         console.log(email)
     })
 
-    return <UserDatasForm onSubmit={handleSubmit}>
-        <FlexContainer flow="row">
-            <UserInfoContainer flow="column">
+    return <ChangeDatasForm onSubmit={handleSubmit}>
+        <FlexContainer flow="column-reverse">
+            <InfosContainer flow="column">
                 <InputWrapper type="text" id="userName" name="userName" inputRef={nameRef} isRequired={true} autoComplete="off" label="User name"/>
                 <InputWrapper type="email" id="userEmail" name="userEmail" inputRef={emailRef} isRequired={true} autoComplete="off" label="User e-mail"/>
-            </UserInfoContainer>
-            <UserPictureContainer justify="center" align="center">
+            </InfosContainer>
+            <PictureContainer justify="center" align="center">
                 <FlexContainer>
                     <img src={userPicture} alt="Profile picture" />
                     <UploadButton id="profilePicture" name="profilePicture" accept=".jpg, .jpeg, .png" cb={{onChange: e => handleUpload(e)}}/>
                 </FlexContainer>
-            </UserPictureContainer>
+            </PictureContainer>
         </FlexContainer>
         <Button type="submit" styleType="active" cornerStyle="basic">Save changes</Button>
-    </UserDatasForm>;
+    </ChangeDatasForm>;
 }
 
 export default index;
