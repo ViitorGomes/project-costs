@@ -1,13 +1,13 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useCallback } from 'react';
 
-export const MenuContext = createContext({})
+export const MenuContext = createContext(false)
 
 export function MenuProvider({children}) {
     const [displayMenu, setDisplayMenu] = useState(false)
 
-    function handleMenuDisplay(status) {
+    const handleMenuDisplay = useCallback(status => {
         setDisplayMenu(status)
-    }
+    }, [])
 
     return <MenuContext.Provider value={{
         displayMenu,

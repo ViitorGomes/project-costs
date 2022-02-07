@@ -3,7 +3,7 @@ import { CategorieItem, CategoryColor } from './style';
 import PropTypes from 'prop-types';
 
 function index({categoryName, categoryColor}) {
-  return <CategorieItem type="button">
+  return <CategorieItem>
       {categoryColor && <CategoryColor bgColor={categoryColor}/>}
       {categoryName}
     </CategorieItem>;

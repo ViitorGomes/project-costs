@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Transition from "../style/animations/Transition/style";
 
-export const CategorieItem = styled.button`
+export const CategorieItem = styled.div`
     border-radius: 4rem;
     border: 1px solid ${props => props.theme.font.font3};
     color: ${props => props.theme.font.font1};
@@ -11,7 +11,6 @@ export const CategorieItem = styled.button`
     align-items: center;
     padding: 6px 8px;
     gap: 12px;
-    cursor: pointer;
     transition: background-color ease-in ${Transition._300ms};
 `
 

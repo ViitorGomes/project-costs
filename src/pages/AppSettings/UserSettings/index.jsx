@@ -1,20 +1,18 @@
 import React from 'react';
-import { UserProfileDatas, UserSettings } from './style';
-import { Heading } from '../../../components/style/elements/Typoghaphy/style';
 import ChangeDatasForm from './ChangeDatas';
 import ResetPasswordForm from './ResetPassword';
+import { FlexContainer } from '../../../components/Container/style';
+import SettingWrapper from '../SettingWrapper'
 
 function index() {
-  return <UserSettings flow="column">
-    <UserProfileDatas>
-        <Heading level={5}>Personal informations</Heading>
-        <ChangeDatasForm />
-    </UserProfileDatas>
-    <UserProfileDatas>
-        <Heading level={5}>Reset password</Heading>
-        <ResetPasswordForm />
-    </UserProfileDatas>
-  </UserSettings>;
+  return <FlexContainer flow="column" gap="36px">
+    <SettingWrapper heading={"Personal informations"}>
+      <ChangeDatasForm />
+    </SettingWrapper>
+    <SettingWrapper heading={"Reset password"}>
+      <ResetPasswordForm />
+    </SettingWrapper>
+  </FlexContainer>;
 }
 
 export default index;

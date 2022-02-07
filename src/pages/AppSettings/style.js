@@ -14,7 +14,7 @@ export const SettingsMainContainer = styled(MainContainer)`
             flex-flow: row;
 
             > *:last-child {
-                flex-basis: calc(100% - 416px);
+                flex-basis: calc(100% - 396px);
             }
 
             ${SettingsNavegation} {

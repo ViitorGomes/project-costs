@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import AppRoutes from './routers';
 import Header from './components/layout/Header';
@@ -10,6 +10,7 @@ import SubHeader from './components/layout/SubHeader';
 import { MenuProvider } from './context/menuContext';
 import { App } from './style';
 import ContentContainer from './components/MainContentContainer';
+import { CategoriesProvider } from './context/categoriesContext';
 
 export default function index() {
   const [ theme, setTheme ] = useState(() => {
@@ -37,7 +38,9 @@ export default function index() {
         <Header/>
         <ContentContainer>
           <SubHeader themeCb={toggleTheme} currentTheme={theme.title}/>
-          <AppRoutes/>
+          <CategoriesProvider>
+            <AppRoutes/>
+          </CategoriesProvider>
           <Footer />
         </ContentContainer>
       </MenuProvider>

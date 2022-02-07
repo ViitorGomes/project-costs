@@ -17,6 +17,7 @@ export const FlexContainer = styled.div`
     justify-content: ${props => props.justify ? props.justify : null};
     align-items: ${props => props.align ? props.align : null};
     flex-flow: ${props => props.flow ? props.flow : null};
+    flex-wrap: ${props => props.wrap ? props.wrap : null};
     gap: ${props => props.gap ? props.gap : 0};
 
 `

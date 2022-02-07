@@ -12,7 +12,7 @@ function index({type="text",id, name, value, inputRef, isRequired=false, autoCom
     <label>{label}</label>
 
     <input
-      value={value}
+      {...(value && {value: value})}
       type={type} 
       id={id} 
       name={name} 

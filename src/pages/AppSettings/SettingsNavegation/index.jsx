@@ -9,7 +9,7 @@ function index() {
       <ul>
           <li><Link to="">General settings</Link></li>
           <li><Link to="user-profile">User profile</Link></li>
-          <li><Link to="categories-settings">Categories settings</Link></li>
+          <li><Link to="categories">Categories settings</Link></li>
       </ul>
   </SettingsNavegation>;
 }
