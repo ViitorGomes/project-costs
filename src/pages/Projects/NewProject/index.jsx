@@ -1,27 +1,33 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { FormContainer } from './style'
 import { Heading } from '../../../components/style/elements/Typoghaphy/style';
 import InputWrapper from '../../../components/inputs/InputWrapper'
 import TextareaWrapper from '../../../components/inputs/TextareaWrapper'
 import Button from '../../../components/buttons/DefaultButton'
 import formatValue from '../../../utils/monetaryFormat';
-import CategorySelector from '../../../components/ProjectCategories';
+import CategorySelector from './ProjectCategories';
+import { useOutletContext } from 'react-router-dom';
 
 function index() {
-  const [name, setName] = useState('')
-  const [budget, setBudget] = useState('')
-  const [category, setCategory] = useState('')
-  const [description, setDescription] = useState('')
+  const nameRef = useRef('')
+  const budgetRef = useRef('')
+  const descriptionRef = useRef('')
+  const [projectCategories, setProjectCategories] = useState([])
+
+  const { handleNewProject } = useOutletContext()
 
   function handleSubmit(e) {
     e.preventDefault()
+
     const newProject = {
       id: Date.now(),
-      name: name,
-      budget: budget,
-      category: category,
-      description: description
+      name: nameRef.current.value,
+      budget: budgetRef.current.value,
+      categories: projectCategories.map(category => category.id),
+      description: descriptionRef.current.value
     }
+
+    handleNewProject(newProject)
   }
 
   return <FormContainer>
@@ -31,41 +37,37 @@ function index() {
       <InputWrapper 
         type="text" 
         id="projectName" 
-        name="projectName" 
-        value={name} 
+        name="projectName"
+        inputRef={nameRef} 
         isRequired={true} 
         autoComplete="off"
         autoFocus={true} 
         label="Project name:" 
-        cb={
-          {onChange: e => setName(e.target.value)}
-        }
       />
 
       <InputWrapper
         type="text" 
         id="projectBudget" 
-        name="projectBudget" 
-        value={formatValue(budget)} 
+        name="projectBudget"
+        inputRef={budgetRef} 
         isRequired={true} 
         autoComplete="off" 
         label="Project budget:"
         flag="$" 
         cb={
-          {onChange: e => setBudget(e.target.value)}
+          {onChange: e => e.target.value = formatValue(e.target.value)}
         }
       />
 
-      <CategorySelector />
+      <CategorySelector selectedCategories={projectCategories} setCategoriesCb={setProjectCategories} />
 
       <TextareaWrapper
         id="projectDescription"
         name="projectDescription"
-        value={description}
+        inputRef={descriptionRef}
         rows="8"
         cols="30"
         label="Project description"
-        cb={{onChange: e => setDescription(e.target.value)}}
         isRequired={true}
       />
 

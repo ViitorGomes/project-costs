@@ -9,12 +9,12 @@ import { CategoriesContext } from '../../../context/categoriesContext';
 function index() {
     const { categories }= useContext(CategoriesContext)
 
-    return <CategoriesSettings flow="row" align="flex-start" gap="36px">
+    return <CategoriesSettings flow="column" gap="36px">
         <SettingWrapper heading="New category">
             <NewCategoryForm/>
         </SettingWrapper>
         <SettingWrapper heading="Categories list">
-            <CategoriesList gap="12px" wrap="wrap">
+            <CategoriesList>
                 {categories.map(category => <CategoryItem key={category.id} categoryName={category.name} categoryColor={category.color}/>)}
             </CategoriesList>
         </SettingWrapper>

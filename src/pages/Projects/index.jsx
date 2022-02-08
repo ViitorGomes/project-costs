@@ -4,10 +4,17 @@ import { Heading } from '../../components/style/elements/Typoghaphy/style';
 import { MdOutlineAdd } from "react-icons/md";
 import Button from '../../components/buttons/DefaultButton';
 import { ProjectsMainContainer } from './style'
+import { useCallback, useEffect } from 'react/cjs/react.development';
 
 function index() {
 
-  const [projects, setProjects] = useState(localStorage.getItem('projects') || [])
+  const [projects, setProjects] = useState(JSON.parse(localStorage.getItem("projects")) || [])
+
+  const handleNewProject = useCallback(newProject => setProjects(prev => [...prev, newProject]), [])
+
+  useEffect(() => {
+    localStorage.setItem("projects", JSON.stringify(projects))
+  }, [projects])
 
   return <ProjectsMainContainer>
       <header>
@@ -18,7 +25,7 @@ function index() {
           </Button>
         </Link>}
       </header>
-      <Outlet context={{projects}} />
+      <Outlet context={{projects, handleNewProject}} />
   </ProjectsMainContainer>;
 }
 

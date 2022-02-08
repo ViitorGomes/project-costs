@@ -5,7 +5,6 @@ export const NewCategoryForm = styled.form`
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
     gap: 36px;
     max-width: 440px;
     margin: 0 auto;

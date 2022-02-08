@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Modal } from "../Modal/style";
 
 export const ProjectCategories = styled.div`
     position: relative;
@@ -20,5 +19,15 @@ export const ProjectCategories = styled.div`
         justify-content: center;
         align-items: center;
         padding: 2px;
+    }
+`
+
+export const CategoriesList = styled.ul`
+    height: 70px;
+    overflow-y: auto;
+
+    > * {
+        display: inline-flex;
+        margin: 6px;
     }
 `

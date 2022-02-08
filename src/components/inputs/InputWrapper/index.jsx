@@ -1,18 +1,13 @@
 import PropTypes from 'prop-types'
 import { InputWrapper } from './style';
-import { useState } from 'react';
 
-function index({type="text",id, name, value, inputRef, isRequired=false, autoComplete = "on", autoFocus=false, label, flag, cb}) {
-  const [focus, setFocus] = useState(false)
-  const [notEmpty, setNotEmpty] = useState(false)
+function index({type="text",id, name, defaultValue, inputRef, isRequired=false, autoComplete = "on", autoFocus=false, label, flag, cb}) {
 
-  return <InputWrapper isFocus={focus} notEmpty={notEmpty} >
+  return <InputWrapper isFocus={focus} >
     {flag && <span>{flag.slice(0, 2)}</span>}
 
-    <label>{label}</label>
-
     <input
-      {...(value && {value: value})}
+      {...(defaultValue ? {defaultValue: defaultValue} : null)}
       type={type} 
       id={id} 
       name={name} 
@@ -20,16 +15,10 @@ function index({type="text",id, name, value, inputRef, isRequired=false, autoCom
       required={isRequired}
       autoComplete={autoComplete} 
       autoFocus={autoFocus}
-      onFocus={e => {
-        setFocus(true)
-        setNotEmpty(false)
-      }} 
-      onBlur={e => {
-        setFocus(false)
-        e.target.value !== "" && setNotEmpty(true)
-      }}
       {...cb}
     />
+
+    <label>{label}</label>
   </InputWrapper>;
 }
 

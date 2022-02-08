@@ -23,12 +23,12 @@ function index() {
 
         handleCategoriesPush(newCategory)
         categoryNameRef.current.value = ""
-        categoryColorRef.current.value = "#ffffff"
+        categoryColorRef.current.value = "#222222"
     }, [])
 
     return <NewCategoryForm onSubmit={handleSubmit}>
         <InputWrapper type="text" id="categoryName" name="categoryName" inputRef={categoryNameRef} isRequired={true} autoComplete="off" label="Category name:"/>
-        <input type="color" defaultValue="#ffffff" ref={categoryColorRef} />
+        <input type="color" defaultValue="#222222" ref={categoryColorRef} />
         <Button type="submit" styleType="active" cornerStyle="basic">Create</Button>
     </NewCategoryForm>;
 }

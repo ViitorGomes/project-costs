@@ -4,19 +4,19 @@ import { TextareaWrapper} from './style';
 function index({name, id, value, inputRef, rows = "10", cols = "30", isRequired = false, autoFocus = false, label, cb}) {
   return <TextareaWrapper>
 
-        {label && <label htmlFor={id}>{label}</label>}
-
         <textarea
             value={value} 
             id={id} 
             name={name} 
-            {...(inputRef && {ref: inputRef})} 
+            {...(inputRef ? {ref: inputRef} : null)} 
             cols={cols} 
             rows={rows}
             required={isRequired}
             autoFocus={autoFocus}
             {...cb}
         ></textarea>
+
+        {label && <label htmlFor={id}>{label}</label>}
     </TextareaWrapper>;
 }
 

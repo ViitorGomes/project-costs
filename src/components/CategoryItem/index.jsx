@@ -1,17 +1,18 @@
 import React from 'react';
-import { CategorieItem, CategoryColor } from './style';
+import { CategoryItem, CategoryColor } from './style';
 import PropTypes from 'prop-types';
 
-function index({categoryName, categoryColor}) {
-  return <CategorieItem>
+function index({categoryName, categoryColor, cb}) {
+  return <CategoryItem {...cb}>
       {categoryColor && <CategoryColor bgColor={categoryColor}/>}
       {categoryName}
-    </CategorieItem>;
+    </CategoryItem>;
 }
 
 index.propTypes = {
   categoryName: PropTypes.string.isRequired,
-  CategoryColor: PropTypes.string
+  categoryColor: PropTypes.string,
+  cb: PropTypes.object
 }
 
 export default index;

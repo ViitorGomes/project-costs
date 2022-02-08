@@ -10,7 +10,7 @@ export const SettingsMainContainer = styled(MainContainer)`
             width: 100%;
         }
 
-        @media screen and (min-width: 760px) {
+        @media screen and (min-width: 960px) {
             flex-flow: row;
 
             > *:last-child {

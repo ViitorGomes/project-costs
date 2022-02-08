@@ -1,8 +1,8 @@
-import styled, { css } from "styled-components"
-import { FlexContainer } from "../../Container/style"
-import Transition from '../../style/animations/Transition/style'
+import styled from "styled-components"
+import { FlexContainer } from "../../../../../components/Container/style"
+import Transition from '../../../../../components/style/animations/Transition/style'
 
-export const CategoriesContainer = styled.div`
+export const ProjectCategories = styled.div`
 
     position: absolute;
     top: 100%;
@@ -37,27 +37,34 @@ export const CategoriesContainer = styled.div`
     }
 `
 
-export const CategoriesFieldset = styled.fieldset`
+export const CategoriesContainer = styled(FlexContainer)`
     overflow: auto;
-    width: 100%;
     border-bottom: 2px solid ${props => props.theme.font.font3};
+    width: 100%;
 
-    > ${FlexContainer} {
+    > div {
         height: 100%;
 
-        p {
+        > div {
+            display: inline-flex;
+            margin: 6px;
+            transition: .2s;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.07);
+            }
+        }
+
+        > p {
             color: ${props => props.theme.font.font1};
+            width: 100%;
+            text-align: center;
+            align-self: center;
         }
     }
     
-    > button {
-        display: inline-flex;
-        margin: 4px;
-    }
-
-    legend {
-        width: 100%;
+    > span {
         color: ${props => props.theme.font.font3};
-        margin-bottom: 4px;
     }
 `
