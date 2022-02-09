@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { MdOutlineModeEdit, MdDelete } from "react-icons/md";
 import { Heading, Span } from '../style/elements/Typoghaphy/style';
 import { FlexContainer } from '../Container/style';
-import { ProjectCard, ProjectInformationsWrapper } from './style';
+import { ProjectCard, ProjectInformationsWrapper, CategoriesContainer } from './style';
 import Button from '../buttons/DefaultButton'
+import { CategoriesContext } from '../../context/categoriesContext';
+import  CategoryItem  from '../CategoryItem';
 
-function index({projectName, projectBudget, projectCategory}) {
+function index({projectName, projectBudget, projectCategories}) {
+
+    const { categories } = useContext(CategoriesContext)
+
+    const fullProjectCategories = categories.filter(category => projectCategories.some(projectCategory => projectCategory === category.id) ? category : null)
 
     return <ProjectCard>
         <Heading level={2}>{projectName}</Heading>
-        <ProjectInformationsWrapper>
-            <FlexContainer justify="space-between">
+        <ProjectInformationsWrapper flow="column" gap="36px">
+            <FlexContainer justify="space-between" gap="16px">
                 <Span>
                     Budget:
                 </Span>
@@ -19,15 +25,15 @@ function index({projectName, projectBudget, projectCategory}) {
                     {projectBudget.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}
                 </Span>
             </FlexContainer>
-            <FlexContainer justify="space-between">
+            <FlexContainer justify="space-between" gap="16px">
                 <Span>
                     Category:
                 </Span>
-                <Span>
-                    {projectCategory}
-                </Span>
+                <CategoriesContainer justify="flex-end" align="flex-start" flexWrap="wrap" gap="6px">
+                    {fullProjectCategories.map(category => <CategoryItem key={category.id} categoryName={category.name} categoryColor={category.color}/>)}
+                </CategoriesContainer>
             </FlexContainer>
-            <FlexContainer justify="space-between">
+            <FlexContainer justify="space-between" gap="16px">
                 <Button type="button" styleType="active" cornerStyle="basic">
                    <MdOutlineModeEdit/> Edit
                 </Button>
@@ -42,7 +48,7 @@ function index({projectName, projectBudget, projectCategory}) {
 index.propTypes = {
     projectName: PropTypes.string.isRequired,
     projectBudget: PropTypes.number.isRequired,
-    projectCategory: PropTypes.string.isRequired,
+    projectCategories: PropTypes.array.isRequired,
 }
 
 export default index;

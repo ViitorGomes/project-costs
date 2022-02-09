@@ -7,6 +7,7 @@ import Button from '../../../components/buttons/DefaultButton'
 import formatValue from '../../../utils/monetaryFormat';
 import CategorySelector from './ProjectCategories';
 import { useOutletContext } from 'react-router-dom';
+import { useEffect } from 'react/cjs/react.development';
 
 function index() {
   const nameRef = useRef('')
@@ -14,20 +15,34 @@ function index() {
   const descriptionRef = useRef('')
   const [projectCategories, setProjectCategories] = useState([])
 
-  const { handleNewProject } = useOutletContext()
+  const { handleNewProject, setShowingButton } = useOutletContext()
+  
+
+  useEffect(() => {
+    setShowingButton(false)
+
+    return () => setShowingButton(true)
+  }, [])
 
   function handleSubmit(e) {
     e.preventDefault()
 
+    const budget = budgetRef.current.value
+      .replace(/\./g, '')
+      .replace(/\,/g, '.')
+    
+    const categories = projectCategories.map(category => category.id)
+
     const newProject = {
       id: Date.now(),
       name: nameRef.current.value,
-      budget: budgetRef.current.value,
-      categories: projectCategories.map(category => category.id),
+      budget: Number(budget),
+      categories: categories,
       description: descriptionRef.current.value
     }
 
     handleNewProject(newProject)
+    
   }
 
   return <FormContainer>

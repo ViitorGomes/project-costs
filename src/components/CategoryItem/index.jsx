@@ -1,10 +1,9 @@
 import React from 'react';
-import { CategoryItem, CategoryColor } from './style';
+import { CategoryItem } from './style';
 import PropTypes from 'prop-types';
 
 function index({categoryName, categoryColor, cb}) {
-  return <CategoryItem {...cb}>
-      {categoryColor && <CategoryColor bgColor={categoryColor}/>}
+  return <CategoryItem {...cb} bgColor={categoryColor}>
       {categoryName}
     </CategoryItem>;
 }

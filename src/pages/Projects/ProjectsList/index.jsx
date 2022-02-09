@@ -15,7 +15,7 @@ function index() {
       ? <ProjectList>
         {
           projects.map(project => <li key={project.id}>
-            <ProjectCard projectName={project.name} projectBudget={project.budget} projectCategory={project.category} />
+            <ProjectCard projectName={project.name} projectBudget={project.budget} projectCategories={project.categories} />
           </li>)
         }
         </ProjectList>
