@@ -1,0 +1,57 @@
+{
+  "projects": [
+    {
+      "id": 1650117222331,
+      "name": "teste 1",
+      "budget": 1000,
+      "categories": [
+        {
+          "id": 1648455934016,
+          "name": "Estudo",
+          "color": "#167cca"
+        }
+      ],
+      "description": "teste 1",
+      "services": [],
+      "costs": 0,
+      "status": "not started"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1648455934016,
+      "name": "Estudo",
+      "color": "#167cca"
+    },
+    {
+      "id": 1648455945752,
+      "name": "React",
+      "color": "#2116bb"
+    },
+    {
+      "id": 1648455958055,
+      "name": "React Native",
+      "color": "#502ca5"
+    },
+    {
+      "id": 1648455973231,
+      "name": "DevOps",
+      "color": "#333333"
+    },
+    {
+      "id": 1648455992125,
+      "name": "JavaScript",
+      "color": "#b9a127"
+    },
+    {
+      "id": 1648527756814,
+      "name": "Node JS",
+      "color": "#189a27"
+    },
+    {
+      "id": 1649643332026,
+      "name": "Jogos",
+      "color": "#d25151"
+    }
+  ]
+}

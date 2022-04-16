@@ -1,35 +1,50 @@
+import React from 'react';
 import PropTypes from 'prop-types'
 import { TextareaWrapper} from './style';
+import Warning from '../../InputWarning'
 
-function index({name, id, value, inputRef, rows = "10", cols = "30", isRequired = false, autoFocus = false, label, cb}) {
-  return <TextareaWrapper>
+function index({id, name, value, defaultValue, inputRef, isRequired=false, invalid=false, validationCb, showErrorMessage=true, autoFocus=false, rows = "10", cols = "30", label, ...props}) {
 
-        <textarea
-            value={value} 
-            id={id} 
-            name={name} 
-            {...(inputRef ? {ref: inputRef} : null)} 
-            cols={cols} 
-            rows={rows}
-            required={isRequired}
-            autoFocus={autoFocus}
-            {...cb}
-        ></textarea>
+    return (
+        <TextareaWrapper invalid={invalid}>
+            {label && <label htmlFor={id}>{label}</label>}
+            
+            <textarea
+                id={id} 
+                name={name} 
+                {...(defaultValue !== undefined ? {defaultValue: defaultValue} : null)}
+                {...(value !== undefined ? {value: value} : null)}
+                {...(inputRef !== undefined ? {ref: inputRef} : null)}
+                {...(validationCb !== undefined ? {onBlur: e => validationCb(e.target.value)} : null)}
+                cols={cols} 
+                rows={rows}
+                autoFocus={autoFocus}
+                {...props}
+            ></textarea>
 
-        {label && <label htmlFor={id}>{label}</label>}
-    </TextareaWrapper>;
+            {showErrorMessage && invalid 
+                ? <Warning />
+                : null
+            }
+
+        </TextareaWrapper>
+    )
 }
 
 index.prototype = {
-    name: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    value: PropTypes.any,
+    defaultValue: PropTypes.any,
+    inputRef: PropTypes.object,
+    isRequired: PropTypes.bool,
+    invalid: PropTypes.bool,
+    validationCb: PropTypes.func,
+    showErrorMessage: PropTypes.bool,
+    autoFocus: PropTypes.bool,
     rows: PropTypes.string,
     cols: PropTypes.string,
-    isRequired: PropTypes.string,
-    autoFocus: PropTypes.string,
     label: PropTypes.string,
-    cb: PropTypes.object
 }
 
 export default index

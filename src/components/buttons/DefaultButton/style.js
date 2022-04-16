@@ -1,13 +1,12 @@
 import styled, { css } from "styled-components";
 
 export const Button = styled.button`
-    padding: 6px 10px;
     color: ${props => props.theme.static.static1};
     border: 0;
     transition: .2s ease-in;
     cursor: pointer;
     gap: 6px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,21 +51,25 @@ export const Button = styled.button`
 
     ${props => {
         let corner;
+        let padding;
 
         switch (props.cornerStyle) {
             case 'rounded':
-                corner = '4rem'
+                corner = '50%'
+                padding= '4px'
                 break
             case 'square':
                 corner = '0rem'
+                padding= '6px 10px'
                 break
             default:
                 corner = '.3rem'
-                
+                padding= '5px 10px'
         }
 
         return css`
             border-radius: ${corner};
+            padding: ${padding};
         `
     }}
 `

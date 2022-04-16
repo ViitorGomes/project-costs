@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Container } from "../../components/Container/style";
-import Transitions from '../../components/style/animations/Transition/style'
 
 export const Home = styled(Container).attrs(() => ({
     as: `main`
@@ -15,13 +14,13 @@ export const Home = styled(Container).attrs(() => ({
         color: ${props => props.theme.font.font1};
         font-size: calc(1rem + 3.6vmin);
         font-weight: 700;
-        transition: color ease-in ${Transitions._300ms};
+        transition: color ease-in .3s;
 
 
         span {
             font-size: calc(1.2rem + 3.2vmin);
             background-color: ${props => props.theme.background.bg1};
-            transition: background-color ease-in ${Transitions._300ms};
+            transition: background-color ease-in .3s;
             color: ${props => props.theme.font.font2};
             padding: 6px 8px;
         }

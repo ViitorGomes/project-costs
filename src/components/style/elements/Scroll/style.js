@@ -5,6 +5,7 @@ export const StyledScroll = createGlobalStyle`
     ::-webkit-scrollbar {
         width: 14px;
         transition: background-color .3s;
+        padding-right: 14px;
         
         &-track {
             background: ${props => props.theme.background.bg3};

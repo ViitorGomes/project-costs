@@ -1,11 +1,11 @@
 import styled, { css } from "styled-components";
-import Transitions from '../../style/animations/Transition/style'
 import { FlexContainer } from "../../Container/style";
 
 export const Header = styled.header`
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1000;
     min-width: 260px;
     max-width: 260px;
     height: 100vh;
@@ -14,7 +14,7 @@ export const Header = styled.header`
     justify-content: space-between;
     padding: 2vh 0;
     background-color: ${props => props.theme.background.bg1};
-    transition: all ${Transitions._300ms}, background-color ${Transitions._300ms};
+    transition: all .3s;
     margin-left: -260px;
 
     ${props => props.displaing && css`

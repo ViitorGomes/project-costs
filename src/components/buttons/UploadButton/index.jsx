@@ -4,12 +4,14 @@ import { MdUpload } from "react-icons/md";
 import { UploadButton } from './style'
 
 function index({id, name, accept, cb}) {
-  return <UploadButton>
-        <label htmlFor="profilePicture">
-            <MdUpload/>
-        </label>
-        <input type="file" id={id} name={name} accept={accept} {...cb} />
-  </UploadButton>;
+  return (
+    <UploadButton>
+          <label htmlFor="profilePicture">
+              <MdUpload/>
+          </label>
+          <input type="file" id={id} name={name} accept={accept} {...cb} />
+    </UploadButton>
+  ) 
 }
 
 index.propTypes = {

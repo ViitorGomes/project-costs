@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { ThemeProvider } from 'styled-components';
 import AppRoutes from './routers';
 import Header from './components/layout/Header';
@@ -8,9 +8,12 @@ import Footer from './components/layout/Footer';
 import { StyledScroll } from './components/style/elements/Scroll/style';
 import SubHeader from './components/layout/SubHeader';
 import { MenuProvider } from './context/menuContext';
+import { CategoriesProvider } from './context/categoriesContext';
+import { ProjectsProvider } from './context/projectsContext';
 import { App } from './style';
 import ContentContainer from './components/MainContentContainer';
-import { CategoriesProvider } from './context/categoriesContext';
+import { MessageProvider } from './context/messageContext';
+import Messages from './components/Message'
 
 export default function index() {
   const [ theme, setTheme ] = useState(() => {
@@ -31,19 +34,26 @@ export default function index() {
     setTheme(theme.title === "light" ? Dark : Light)
   }
 
-  return <ThemeProvider theme={theme}>
-    <StyledScroll />
-    <App>
-      <MenuProvider>
-        <Header/>
-        <ContentContainer>
-          <SubHeader themeCb={toggleTheme} currentTheme={theme.title}/>
-          <CategoriesProvider>
-            <AppRoutes/>
-          </CategoriesProvider>
-          <Footer />
-        </ContentContainer>
-      </MenuProvider>
-    </App>
-  </ThemeProvider>
+  return (
+    <ThemeProvider theme={theme}>
+      <StyledScroll />
+      <App>
+        <MenuProvider>
+          <Header/>
+          <ContentContainer>
+            <SubHeader themeCb={toggleTheme} currentTheme={theme.title}/>
+            <MessageProvider>
+            <CategoriesProvider>
+            <ProjectsProvider>
+              <AppRoutes/>
+              <Messages />
+            </ProjectsProvider>
+            </CategoriesProvider>
+            </MessageProvider>
+            <Footer />
+          </ContentContainer>
+        </MenuProvider>
+      </App>
+    </ThemeProvider>
+  )
 }

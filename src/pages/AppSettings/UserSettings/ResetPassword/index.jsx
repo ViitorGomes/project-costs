@@ -10,18 +10,20 @@ function index() {
   const newPasswordRef = useRef(null)
   const repeatPasswordRef = useRef(null)
 
-  const handleSubmit = useCallback((e) => {
+  function handleSubmit(e) {
     e.preventDefault()
-  }, [])
+  }
 
-  return <ResetPasswordForm onSubmit={handleSubmit}>
-    <FlexContainer gap="36px" flow="column">
-      <InputWrapper type="password" id="currentPassword" name="currentPassword" inputRef={currentPasswordRef} isRequired={true} autoComplete="off" label="Current password:"/>
-      <InputWrapper type="password" id="newPassword" name="newPassword" inputRef={newPasswordRef} isRequired={true} autoComplete="off" label="New password:"/>
-      <InputWrapper type="password" id="repeatPassword" name="repeatPassword" inputRef={repeatPasswordRef} isRequired={true} autoComplete="off" label="Repeat password:"/>
-    </FlexContainer>
-    <Button type="submit" styleType="active" cornerStyle="basic">Save changes</Button>
-  </ResetPasswordForm>;
+  return (
+    <ResetPasswordForm onSubmit={handleSubmit}>
+      <FlexContainer gap="36px" flow="column">
+        <InputWrapper type="password" id="currentPassword" name="currentPassword" inputRef={currentPasswordRef} isRequired={true} autoComplete="off" label="Current password:"/>
+        <InputWrapper type="password" id="newPassword" name="newPassword" inputRef={newPasswordRef} isRequired={true} autoComplete="off" label="New password:"/>
+        <InputWrapper type="password" id="repeatPassword" name="repeatPassword" inputRef={repeatPasswordRef} isRequired={true} autoComplete="off" label="Repeat password:"/>
+      </FlexContainer>
+      <Button type="submit" styleType="active" cornerStyle="basic">Save changes</Button>
+    </ResetPasswordForm>
+  )
 }
 
 export default index;

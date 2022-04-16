@@ -1,38 +1,18 @@
-import React, { useState } from 'react';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
-import { Heading } from '../../components/style/elements/Typoghaphy/style';
-import { MdOutlineAdd } from "react-icons/md";
-import Button from '../../components/buttons/DefaultButton';
-import { ProjectsMainContainer } from './style'
-import { useCallback, useEffect } from 'react/cjs/react.development';
+import React, { useState, useContext } from 'react'
+import { MainContainer } from '../../components/Container/style'
+import ProjectsHeader from './ProjectsHeader'
+import { Outlet } from 'react-router-dom'
 
 function index() {
 
-  const redirectToProjectPage = useNavigate()
-
-  const [projects, setProjects] = useState(JSON.parse(localStorage.getItem("projects")) || [])
   const [showingButton, setShowingButton] = useState(true)
 
-  const handleNewProject = useCallback(newProject => {
-    setProjects(prev => [...prev, newProject])
-    redirectToProjectPage("/projects")
-  }, [])
-
-  useEffect(() => {
-    localStorage.setItem("projects", JSON.stringify(projects))
-  }, [projects])
-
-  return <ProjectsMainContainer>
-      <header>
-        <Heading level={2}>Projects</Heading>
-        {projects.length > 0 && showingButton ? <Link to="new-project">
-          <Button type="button" styleType="active" cornerStyle="basic">
-            New project <MdOutlineAdd/>
-          </Button>
-        </Link> : null}
-      </header>
-      <Outlet context={{projects, handleNewProject, setShowingButton}} />
-  </ProjectsMainContainer>;
+  return (
+    <MainContainer>
+      <ProjectsHeader showingButton={showingButton} />
+      <Outlet context={setShowingButton}/>
+    </MainContainer>
+  )
 }
 
-export default index;
+export default index

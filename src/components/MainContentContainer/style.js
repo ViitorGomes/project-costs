@@ -1,10 +1,10 @@
 import styled, { css }  from "styled-components";
-import { FlexContainer } from '../Container/style';
-import Transitions from '../style/animations/Transition/style'
 
-export const ContentContainer = styled(FlexContainer)`
+export const ContentContainer = styled.div`
+  display: flex;
+  flex-flow: column;
   width: 100%;
-  transition: all ${Transitions._300ms};
+  transition: all .3s;
 
   ${props => props.displaingMenu && css`
     padding-left: 260px;
@@ -18,7 +18,7 @@ export const ContentContainer = styled(FlexContainer)`
     min-height: calc(100vh - 56px);
   }
 
-  @media screen and (min-width: 760px) {
+  @media screen and (min-width: 860px) {
     > * {
       width: 100%;
     }

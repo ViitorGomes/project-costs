@@ -1,25 +1,38 @@
+import React from 'react';
 import PropTypes from 'prop-types'
 import { InputWrapper } from './style';
+import Warning from '../../InputWarning'
 
-function index({type="text",id, name, defaultValue, inputRef, isRequired=false, autoComplete = "on", autoFocus=false, label, flag, cb}) {
+function index({type="text", id, name, value, defaultValue, inputRef, isRequired=false, invalid=false, showErrorMessage=true, autoComplete=true, autoFocus=false, label, flag, ...props}) {
 
-  return <InputWrapper isFocus={focus} >
-    {flag && <span>{flag.slice(0, 2)}</span>}
+  return (
+    <InputWrapper invalid={invalid}>
 
-    <input
-      {...(defaultValue ? {defaultValue: defaultValue} : null)}
-      type={type} 
-      id={id} 
-      name={name} 
-      {...(inputRef ? {ref: inputRef} : null)} 
-      required={isRequired}
-      autoComplete={autoComplete} 
-      autoFocus={autoFocus}
-      {...cb}
-    />
+      <div>
+        {flag && <span>{flag.slice(0, 2)}</span>}
+        
+        <input
+          type={type} 
+          id={id} 
+          name={name} 
+          {...(defaultValue !== undefined ? {defaultValue: defaultValue} : null)}
+          {...(value !== undefined ? {value: value} : null)}
+          {...(inputRef !== undefined ? {ref: inputRef} : null)} 
+          autoComplete={autoComplete ? "on" : "off"} 
+          autoFocus={autoFocus}
+          {...props}
+        />
+        <label htmlFor={id}>{label}</label>
+      </div>
+      
 
-    <label>{label}</label>
-  </InputWrapper>;
+      {showErrorMessage && invalid 
+        ? <Warning />
+        : null
+      }
+
+    </InputWrapper>
+  )
 }
 
 index.propTypes = {
@@ -27,12 +40,15 @@ index.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     value: PropTypes.any,
+    defaultValue: PropTypes.any,
+    inputRef: PropTypes.object,
     isRequired: PropTypes.bool,
-    autoComplete: PropTypes.string,
+    invalid: PropTypes.bool,
+    showErrorMessage: PropTypes.bool,
+    autoComplete: PropTypes.bool,
     autoFocus: PropTypes.bool,
     label: PropTypes.string,
     flag: PropTypes.string,
-    cb: PropTypes.object
 }
 
 export default index

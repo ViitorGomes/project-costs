@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FlexContainer } from '../../../components/Container/style'
-import { SettingWrapper } from "../SettingWrapper/style";
+import { SettingWrapper } from "../../../components/SettingWrapper/style";
 
 export const CategoriesSettings = styled(FlexContainer)`
     > ${SettingWrapper} {
@@ -30,9 +30,4 @@ export const CategoriesSettings = styled(FlexContainer)`
 
 export const CategoriesList = styled.ul`
    padding: 22px;
-
-   > * {
-       display: inline-flex;
-       margin: 6px; 
-   }
 `

@@ -1,41 +1,47 @@
+import React from 'react';
 import PropTypes from 'prop-types'
 import { SelectWrapper } from './style'
-import React from 'react'
 
-function index({options, name, id, inputRef, label, cb, autoFocus = false, isRequired = false}) {
+function index({options, name, id, value, defaultValue, inputRef, invalid=false, label, autoFocus = false, ...props}) {
 
-  return <SelectWrapper>
+  return (
+    <SelectWrapper>
 
-    <select
-      defaultValue='' 
-      id={id} 
-      name={name}
-      {...(inputRef ? {ref: inputRef} : null)} 
-      required={isRequired}
-      autoFocus={autoFocus}
-      {...cb}
-    >
-      <option 
-        disabled
-        hidden
-      ></option>
+      <select
+        id={id} 
+        name={name}
+        {...(defaultValue !== undefined ? {defaultValue: defaultValue} : null)}
+        {...(value !== undefined ? {value: value} : {defaultValue: ""})}
+        {...(inputRef !== undefined ? {ref: inputRef} : null)}
+        required={isRequired}
+        autoFocus={autoFocus}
+        {...props}
+      >
+        <option 
+          disabled
+          hidden
+        ></option>
 
-      {options.map(option => <option key={option.id || option} value={option}>{option}</option>)}
-    </select>
+        {options.map(option => <option key={option.id || option} value={option.name || option}>{option.name}</option>)}
+      </select>
 
-    {label && <label htmlFor={id}>{label}</label>}
+      {label && <label htmlFor={id}>{label}</label>}
 
-  </SelectWrapper> 
+    </SelectWrapper> 
+  ) 
 }
 
 index.propTypes = {
     options: PropTypes.array.isRequired,
     name: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
+    value: PropTypes.any,
+    defaultValue: PropTypes.any,
+    inputRef: PropTypes.string,
+    invalid: PropTypes.bool,
     label: PropTypes.string,
     isRequired: PropTypes.bool,
     autoFocus: PropTypes.bool,
-    cb: PropTypes.object
 }
 
 export default index;

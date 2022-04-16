@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Transitions from '../style/animations/Transition/style'
 
 export const Container = styled.div`
     padding: 0 4vw;
@@ -28,10 +27,10 @@ export const MainContainer = styled(Container).attrs(() => ({
     padding: 3vh 4vw;
     display: grid;
     grid-template-rows: 60px 1fr;
-    gap: 36px;
+    gap: 22px;
+    position: relative;
 
     > header {
-        padding: 8px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -39,7 +38,7 @@ export const MainContainer = styled(Container).attrs(() => ({
         
         h2 {
             color: ${props => props.theme.font.font1};
-            transition: color ${Transitions._300ms};
+            transition: color ease-in .3s;
             font-size: calc(1rem + .88vmin);
             font-weight: 600;
             flex: 1 1 50%;
@@ -50,17 +49,17 @@ export const MainContainer = styled(Container).attrs(() => ({
                 display: block;
                 height: 4px;
                 background-image: linear-gradient(to right, ${props => props.theme.font.font1} 20%, transparent 40%, transparent 40%);
-                transition: background-image ease-in ${Transitions._300ms};
+                transition: background-image ease-in .3s;
 
             }
         }
     }
 
     @media screen and (min-width: 760px) {
-        padding: 3vh 3vw;   
+        padding: 2vh 2vw;   
     }
 
     @media screen and (min-width: 1200px) {
-        padding: 3vh 2vw;   
+        padding: 2vh 1vw;   
     }
 `

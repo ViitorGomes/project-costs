@@ -1,5 +1,4 @@
-import styled, { css } from "styled-components";
-import Transitions from '../../style/animations/Transition/style'
+import styled from "styled-components";
 
 export const SelectWrapper = styled.div`
     position: relative;
@@ -10,13 +9,12 @@ export const SelectWrapper = styled.div`
     select {
         border-radius: .3rem;
         border: 1px solid ${props => props.theme.static.static5};
+        background-color: transparent;
         width: 100%;
         outline: 0;
-        background-color: ${props => props.theme.background.bg3};
         color: ${props => props.theme.font.font1};
         font-size: 1.09rem;
         padding: 8px;
-        transition: background-color ease-in ${Transitions._300ms}, border ${Transitions._200ms};
 
         &:-webkit-autofill,
         &:-webkit-autofill:hover, 
@@ -42,6 +40,5 @@ export const SelectWrapper = styled.div`
         font-size: .92rem;
         display: block;
         margin-bottom: 6px;
-        transition: color ${Transitions._200ms};
     }
 `

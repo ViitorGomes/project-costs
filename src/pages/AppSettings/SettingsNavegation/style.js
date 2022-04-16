@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import Transitions from '../../../components/style/animations/Transition/style'
 
 export const SettingsNavegation = styled.nav`
     background-color: ${props => props.theme.background.bg3};
-    transition: background-color ease-in ${Transitions._300ms};
+    transition: background-color ease-in .3s;
     border-radius: .3rem;
 
     h5 {
@@ -12,7 +11,7 @@ export const SettingsNavegation = styled.nav`
         padding: 16px 20px;
         color: ${props => props.theme.font.font1};
         border-bottom: 1px solid ${props => props.theme.static.static5};
-        transition: background-color ease-in ${Transitions._300ms};
+        transition: background-color ease-in .3s;
     }
 
     li {
@@ -26,7 +25,7 @@ export const SettingsNavegation = styled.nav`
         display: block;
         padding: 12px 20px;
         color: ${props => props.theme.font.font3};
-        transition: all ${Transitions._200ms};
+        transition: all .2s;
 
         &:hover {
             color: ${props => props.theme.font.font1};

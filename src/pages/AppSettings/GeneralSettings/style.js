@@ -5,6 +5,7 @@ export const GeneralSettings = styled(FlexContainer)`
     height: 100%;
     background-color: ${props => props.theme.background.bg3};
     border-radius: .3rem;
+    transition: background-color ease-in .3s;
     
     h5 {
         color: ${props => props.theme.font.font1};

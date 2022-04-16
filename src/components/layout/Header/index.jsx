@@ -16,18 +16,20 @@ function index() {
         displayMenu ? handleMenuDisplay(false) : null
     })
 
-    return <Header displaing={displayMenu} ref={headerRef}>
-        <FlexContainer flow="column">
-            <Link to='/'>
-                <img src={logo} alt="Cost logo" />
-            </Link>
-            <PageNavegation/>
-        </FlexContainer>
-        <FlexContainer>
-            <SettingsButton />
-            <LogoutButton/>
-        </FlexContainer>
-    </Header>;
+    return (
+        <Header displaing={displayMenu} ref={headerRef}>
+            <FlexContainer flow="column">
+                <Link to='/'>
+                    <img src={logo} alt="Cost logo" />
+                </Link>
+                <PageNavegation/>
+            </FlexContainer>
+            <FlexContainer>
+                <SettingsButton />
+                <LogoutButton/>
+            </FlexContainer>
+        </Header>
+    )
 }
 
 export default index
